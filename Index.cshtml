@@ -1,0 +1,281 @@
+﻿@model VideoPoker.ViewModels.GameViewModel
+<h1 class="text-center">Jacks or Better Video Poker</h1>
+<div class="container">
+    <table class="table tbl-changeSize table-condensed" id="tblPaytable">
+        <tr>
+            <th class="table-bordered" id="thHand">
+                @Html.DisplayNameFor(model => model.HandName)
+            </th>
+            <th class="table-bordered" id="thBet1">
+                @Html.DisplayNameFor(model => model.Bet1Pays)
+            </th>
+            <th class="table-bordered" id="thBet2">
+                @Html.DisplayNameFor(model => model.Bet2Pays)
+            </th>
+            <th class="table-bordered" id="thBet3">
+                @Html.DisplayNameFor(model => model.Bet3Pays)
+            </th>
+            <th class="table-bordered" id="thBet4">
+                @Html.DisplayNameFor(model => model.Bet4Pays)
+            </th>
+            <th class="table-bordered" id="thBet5">
+                @Html.DisplayNameFor(model => model.Bet5Pays)
+            </th>
+        </tr>
+        <tr class="table-bordered" id="trRoyalFlush">
+            <td class="table-bordered paytable-default" id="tdRoyalFlush0">
+                @Html.DisplayFor(modelItem => Model.Paytable[0].Hand)
+            </td>
+            <td class="table-bordered" id="tdRoyalFlush1">
+                @Html.DisplayFor(modelItem => Model.Paytable[0].Bet1Pays)
+            </td>
+            <td class="table-bordered" id="tdRoyalFlusH2">
+                @Html.DisplayFor(modelItem => Model.Paytable[0].Bet2Pays)
+            </td>
+            <td class="table-bordered" id="tdRoyalFlush3">
+                @Html.DisplayFor(modelItem => Model.Paytable[0].Bet3Pays)
+            </td>
+            <td class="table-bordered" id="tdRoyalFlush4">
+                @Html.DisplayFor(modelItem => Model.Paytable[0].Bet4Pays)
+            </td>
+            <td class="table-bordered" id="tdRoyalFlush5">
+                @Html.DisplayFor(modelItem => Model.Paytable[0].Bet5Pays)
+            </td>
+        </tr>
+        <tr class="table-bordered" id="trStraightFlush">
+            <td class="table-bordered paytable-default" id="tdStraightFlush0">
+                @Html.DisplayFor(modelItem => Model.Paytable[1].Hand)
+            </td>
+            <td class="table-bordered" id="tdStraightFlush1">
+                @Html.DisplayFor(modelItem => Model.Paytable[1].Bet1Pays)
+            </td>
+            <td class="table-bordered" id="tdStraightFlush2">
+                @Html.DisplayFor(modelItem => Model.Paytable[1].Bet2Pays)
+            </td>
+            <td class="table-bordered" id="tdStraightFlush3">
+                @Html.DisplayFor(modelItem => Model.Paytable[1].Bet3Pays)
+            </td>
+            <td class="table-bordered" id="tdStraightFlush4">
+                @Html.DisplayFor(modelItem => Model.Paytable[1].Bet4Pays)
+            </td>
+            <td class="table-bordered" id="tdStraightFlush5">
+                @Html.DisplayFor(modelItem => Model.Paytable[1].Bet5Pays)
+            </td>
+        </tr>
+        <tr class="table-bordered" id="trQuads">
+            <td class="table-bordered paytable-default" id="tdQuads0">
+                @Html.DisplayFor(modelItem => Model.Paytable[2].Hand)
+            </td>
+            <td class="table-bordered" id="tdQuads1">
+                @Html.DisplayFor(modelItem => Model.Paytable[2].Bet1Pays)
+            </td>
+            <td class="table-bordered" id="tdQuads2">
+                @Html.DisplayFor(modelItem => Model.Paytable[2].Bet2Pays)
+            </td>
+            <td class="table-bordered" id="tdQuads3">
+                @Html.DisplayFor(modelItem => Model.Paytable[2].Bet3Pays)
+            </td>
+            <td class="table-bordered" id="tdQuads4">
+                @Html.DisplayFor(modelItem => Model.Paytable[2].Bet4Pays)
+            </td>
+            <td class="table-bordered" id="tdQuads5">
+                @Html.DisplayFor(modelItem => Model.Paytable[2].Bet5Pays)
+            </td>
+        </tr>
+        <tr class="table-bordered" id="trFullHouse">
+            <td class="table-bordered paytable-default" id="tdFullHouse0">
+                @Html.DisplayFor(modelItem => Model.Paytable[3].Hand)
+            </td>
+            <td class="table-bordered" id="tdFullHouse1">
+                @Html.DisplayFor(modelItem => Model.Paytable[3].Bet1Pays)
+            </td>
+            <td class="table-bordered" id="tdFullHouse2">
+                @Html.DisplayFor(modelItem => Model.Paytable[3].Bet2Pays)
+            </td>
+            <td class="table-bordered" id="tdFullHouse3">
+                @Html.DisplayFor(modelItem => Model.Paytable[3].Bet3Pays)
+            </td>
+            <td class="table-bordered" id="tdFullHouse4">
+                @Html.DisplayFor(modelItem => Model.Paytable[3].Bet4Pays)
+            </td>
+            <td class="table-bordered" id="tdFullHouse5">
+                @Html.DisplayFor(modelItem => Model.Paytable[3].Bet5Pays)
+            </td>
+        </tr>
+        <tr class="table-bordered" id="trFlush">
+            <td class="table-bordered paytable-default" id="tdFlush0">
+                @Html.DisplayFor(modelItem => Model.Paytable[4].Hand)
+            </td>
+            <td class="table-bordered" id="tdFlush1">
+                @Html.DisplayFor(modelItem => Model.Paytable[4].Bet1Pays)
+            </td>
+            <td class="table-bordered" id="tdFlush2">
+                @Html.DisplayFor(modelItem => Model.Paytable[4].Bet2Pays)
+            </td>
+            <td class="table-bordered" id="tdFlush3">
+                @Html.DisplayFor(modelItem => Model.Paytable[4].Bet3Pays)
+            </td>
+            <td class="table-bordered" id="tdFlush4">
+                @Html.DisplayFor(modelItem => Model.Paytable[4].Bet4Pays)
+            </td>
+            <td class="table-bordered" id="tdFlush5">
+                @Html.DisplayFor(modelItem => Model.Paytable[4].Bet5Pays)
+            </td>
+        </tr>
+        <tr class="table-bordered" id="trStraight">
+            <td class="table-bordered paytable-default" id="tdStraight0">
+                @Html.DisplayFor(modelItem => Model.Paytable[5].Hand)
+            </td>
+            <td class="table-bordered" id="tdStraight1">
+                @Html.DisplayFor(modelItem => Model.Paytable[5].Bet1Pays)
+            </td>
+            <td class="table-bordered" id="tdStraight2">
+                @Html.DisplayFor(modelItem => Model.Paytable[5].Bet2Pays)
+            </td>
+            <td class="table-bordered" id="tdStraight3">
+                @Html.DisplayFor(modelItem => Model.Paytable[5].Bet3Pays)
+            </td>
+            <td class="table-bordered" id="tdStraight4">
+                @Html.DisplayFor(modelItem => Model.Paytable[5].Bet4Pays)
+            </td>
+            <td class="table-bordered" id="tdStraight5">
+                @Html.DisplayFor(modelItem => Model.Paytable[5].Bet5Pays)
+            </td>
+        </tr>
+        <tr class="table-bordered" id="trTrips">
+            <td class="table-bordered paytable-default" id="tdTrips0">
+                @Html.DisplayFor(modelItem => Model.Paytable[6].Hand)
+            </td>
+            <td class="table-bordered" id="tdTrips1">
+                @Html.DisplayFor(modelItem => Model.Paytable[6].Bet1Pays)
+            </td>
+            <td class="table-bordered" id="tdTrips2">
+                @Html.DisplayFor(modelItem => Model.Paytable[6].Bet2Pays)
+            </td>
+            <td class="table-bordered" id="tdTrips3">
+                @Html.DisplayFor(modelItem => Model.Paytable[6].Bet3Pays)
+            </td>
+            <td class="table-bordered" id="tdTrips4">
+                @Html.DisplayFor(modelItem => Model.Paytable[6].Bet4Pays)
+            </td>
+            <td class="table-bordered" id="tdTrips5">
+                @Html.DisplayFor(modelItem => Model.Paytable[6].Bet5Pays)
+            </td>
+        </tr>
+        <tr class="table-bordered" id="trTwoPair">
+            <td class="table-bordered paytable-default" id="tdTwoPair0">
+                @Html.DisplayFor(modelItem => Model.Paytable[7].Hand)
+            </td>
+            <td class="table-bordered" id="tdTwoPair1">
+                @Html.DisplayFor(modelItem => Model.Paytable[7].Bet1Pays)
+            </td>
+            <td class="table-bordered" id="tdTwoPair2">
+                @Html.DisplayFor(modelItem => Model.Paytable[7].Bet2Pays)
+            </td>
+            <td class="table-bordered" id="tdTwoPair3">
+                @Html.DisplayFor(modelItem => Model.Paytable[7].Bet3Pays)
+            </td>
+            <td class="table-bordered" id="tdTwoPair4">
+                @Html.DisplayFor(modelItem => Model.Paytable[7].Bet4Pays)
+            </td>
+            <td class="table-bordered" id="tdTwoPair5">
+                @Html.DisplayFor(modelItem => Model.Paytable[7].Bet5Pays)
+            </td>
+        </tr>
+        <tr class="table-bordered" id="trJacksOrBetter">
+            <td class="table-bordered paytable-default" id="tdJacksOrBetter0">
+                @Html.DisplayFor(modelItem => Model.Paytable[8].Hand)
+            </td>
+            <td class="table-bordered" id="tdJacksOrBetter1">
+                @Html.DisplayFor(modelItem => Model.Paytable[8].Bet1Pays)
+            </td>
+            <td class="table-bordered" id="tdJacksOrBetter2">
+                @Html.DisplayFor(modelItem => Model.Paytable[8].Bet2Pays)
+            </td>
+            <td class="table-bordered" id="tdJacksOrBetter3">
+                @Html.DisplayFor(modelItem => Model.Paytable[8].Bet3Pays)
+            </td>
+            <td class="table-bordered" id="tdJacksOrBetter4">
+                @Html.DisplayFor(modelItem => Model.Paytable[8].Bet4Pays)
+            </td>
+            <td class="table-bordered" id="tdJacksOrBetter5">
+                @Html.DisplayFor(modelItem => Model.Paytable[8].Bet5Pays)
+            </td>
+        </tr>
+    </table>
+</div>
+<script src="~/Scripts/jquery-1.10.2.js"></script>
+<div class="row">
+    <div class="col-md-10">
+        <div id="divGameResult" class="text-center game-over">
+            Bet 1 to 5 Credits
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col-md-12 my-div" id="divImages">
+            <div class="col-xs-2">
+                <img src="~/Images/b2fv.png" id="card0" onclick="hold1()" height="200" alt="Hold" class="img-unclickable img-changeSize" />
+            </div>
+            <div class="col-xs-2">
+                <img src="~/Images/b2fv.png" id="card1" onclick="hold2()" height="200" alt="Hold" class="img-unclickable img-changeSize" />
+            </div>
+            <div class="col-xs-2">
+                <img src="~/Images/b2fv.png" id="card2" onclick="hold3()" height="200" alt="Hold" class="img-unclickable img-changeSize" />
+            </div>
+            <div class="col-xs-2">
+                <img src="~/Images/b2fv.png" id="card3" onclick="hold4()" height="200" alt="Hold" class="img-unclickable img-changeSize" />
+            </div>
+            <div class="col-xs-2">
+                <img src="~/Images/b2fv.png" id="card4" onclick="hold5()" height="200" alt="Hold" class="img-unclickable img-changeSize" />
+            </div>
+        </div>
+        <div class="container">
+            <div class="col-xs-2">
+                <input type="button" id="btnDealDraw" class="btn-draw btn-lg " value="Deal" /><br /><br />
+                <input type="button" id="btnChangeBet" class="btn-lg btn-betAmt " value="Bet 1" /><br /><br />
+                <div class="row">
+                    <div class="col-xs-2">
+                        <label class="display-credits">Credit</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-2">
+                        <div id="divCredits" class="text-center label table-bordered display-credits"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-12 my-div">
+        <div class="col-xs-2">
+            <div id="div1" class="text-center"></div>
+        </div>
+        <div class="col-xs-2">
+            <div id="div2" class="text-center"></div>
+        </div>
+        <div class="col-xs-2">
+            <div id="div3" class="text-center"></div>
+        </div>
+        <div class="col-xs-2">
+            <div id="div4" class="text-center"></div>
+        </div>
+        <div class="col-xs-2">
+            <div id="div5" class="text-center"></div>
+        </div>
+    </div>
+</div>
+@*<audio id="sound1" src="../Sounds/chimes.wav"></audio>
+    <audio id="sound2" src="../Sounds/beep26.mp3"></audio>
+    <audio id="sound3" src="../Sounds/Windows Balloon.wav"></audio>*@
+@section Scripts{
+    <script>
+        $('#divCredits').text(@Model.Credits);
+    </script>
+}
+
+
+
