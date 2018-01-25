@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
@@ -14,7 +14,7 @@ namespace VideoPoker.Controllers
     {
         private VideoPokerEntities dbContext = new VideoPokerEntities();
         private static List<Card> dealCards = new List<Card>();
-        private static List<Card> _drawCards = new List<Card>();
+        private static List<Card> drawCards = new List<Card>();
         private static UserAccount userAccountInfo = new UserAccount();
 
         public ActionResult Index()
@@ -62,29 +62,29 @@ namespace VideoPoker.Controllers
 
         public ActionResult Draw(int[] arr, int betAmt)
         {
-            _drawCards = new List<Card>();
+            drawCards = new List<Card>();
             for (int i = 0; i < arr.Length; i++)
             {
                 if (arr[i] == 0)
                 {
-                    _drawCards.Add(dealCards[i + 5]);
+                    drawCards.Add(dealCards[i + 5]);
                 }
                 else
                 {
-                    _drawCards.Add(dealCards[i]);
+                    drawCards.Add(dealCards[i]);
                 }
             }
             GameViewModel gameStatus = new GameViewModel
             {
                 Message = "Game Over",
-                Hand = _drawCards,
+                Hand = drawCards,
                 GameOver = true,
                 Credits = (int)userAccountInfo.Credits,
                 BetAmount = betAmt,
                 Paytable = dbContext.JacksOrBetterPayouts.ToList()
 
             };
-            HandInfo.EvaluateHand(gameStatus, _drawCards, userAccountInfo);
+            HandInfo.EvaluateHand(gameStatus, drawCards, userAccountInfo);
             return Json(gameStatus, JsonRequestBehavior.AllowGet);
         }
         public ActionResult ChangeBetAmount(int betAmt)
