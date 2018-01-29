@@ -8,9 +8,6 @@ table {
     color: white;
 }
 
-.poker-background body {
-}
-
 .img-unclickable {
     pointer-events: none;
 }
