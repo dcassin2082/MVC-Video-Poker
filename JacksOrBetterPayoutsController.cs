@@ -35,10 +35,10 @@ namespace VideoPoker.Controllers
         {
             int userId = 1;
             userAccountInfo = dbContext.UserAccounts.Where(u => u.UserId == userId).FirstOrDefault();
-            List<int> _shuffle = ShuffleDeck();
+            List<int> shuffle = GameAction.ShuffleDeck();
             dealCards = new List<Card>();
 
-            foreach (var item in _shuffle)
+            foreach (var item in shuffle)
             {
                 var card = dbContext.Cards.Where(c => c.CardId == item).FirstOrDefault();
                 dealCards.Add(card);
@@ -98,25 +98,6 @@ namespace VideoPoker.Controllers
             else
                 gameStatus.BetAmount = 1;
             return Json(gameStatus, JsonRequestBehavior.AllowGet);
-        }
-
-        public List<int> ShuffleDeck()
-        {
-            List<int> cards = new List<int>();
-            int count = 0;
-            Random r = new Random();
-            cards.Clear();
-            do
-            {
-                int card = r.Next(1, 53);
-                if (!cards.Contains(card))
-                {
-                    cards.Add(card);
-                    count++;
-                }
-
-            } while (count < 52);
-            return cards.Take(10).ToList();
         }
 
         protected override void Dispose(bool disposing)
